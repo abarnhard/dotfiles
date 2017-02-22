@@ -12,6 +12,7 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+  scrub = "!f(){ git fetch --all -p; git branch -vv | grep gone | awk '{ print $1 }' | xargs -n 1 git branch -d; };f"
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
